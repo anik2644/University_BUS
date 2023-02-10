@@ -1,3 +1,5 @@
+import 'package:campousia/Screen/ParticularHomePage/ParticulurHomePageComponents/ParticularDetails/PArticularDetailsHomePageScaffold/ScaffoldItems/BodyComponents/Chat/MessageScreen.dart';
+import 'package:campousia/Screen/ParticularHomePage/ParticulurHomePageComponents/ParticularDetails/PArticularDetailsHomePageScaffold/ScaffoldItems/BodyComponents/Route/RouteView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +33,9 @@ class _ButtonSectionState extends State<ButtonSection> {
               color: Colors.blue,
               Icons.chat,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => MessagesScreen() ));
+            },
           ),
           IconButton(
             icon: Icon(
@@ -39,6 +43,14 @@ class _ButtonSectionState extends State<ButtonSection> {
               Icons.location_on,
             ),
             onPressed: () {
+
+              Navigator.push(context, MaterialPageRoute(builder: (context) => RouteView() ));
+
+
+            /*
+              onPressed: () {
+
+              },
               AlertDialog alert = AlertDialog(
                 title: Text('Location:'),
                 content: Text(Bus.busList[Bus.selectedBus].location),
@@ -49,6 +61,8 @@ class _ButtonSectionState extends State<ButtonSection> {
                   return alert;
                 },
               );
+
+              */
             },
           ),
         ],
