@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
+//import 'package:geolocator/geolocator.dart';
 import '../../../../../../../../Model/StaticPart/BusStaticVariables.dart';
 import '../../../../../../../../Model/StaticPart/FirabaseStaticVariables.dart';
 import '../../../../../../../../Model/StaticPart/Firebase/FirebaseFetchId.dart';
@@ -19,6 +19,8 @@ class ScheduleButton extends StatefulWidget {
 }
 
 class _ScheduleButtonState extends State<ScheduleButton> {
+
+  /*
   Future<Position> openLocationSetting() async {
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
@@ -78,8 +80,11 @@ class _ScheduleButtonState extends State<ScheduleButton> {
     }
     return await Geolocator.getCurrentPosition();
   }
+*/
+
 
   late double llat, llong;
+
   Future<void> locfetch() async {
     var docSnapshot = await FirebaseFirestore.instance
         .collection("Location")
@@ -117,7 +122,7 @@ class _ScheduleButtonState extends State<ScheduleButton> {
     BusStaticVariables.sch = widget.time;
     BusStaticVariables.upDown = widget.ud;
 
-    openLocationSetting().then((value) {});
+    //openLocationSetting().then((value) {});
 
     if (ModelStatic.gps_share_flag == 0) {
       await FirebaseFetchId.getLocationDocID();
