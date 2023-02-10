@@ -39,6 +39,32 @@ class _TarangaBusBodyState extends State<TarangaBusBody> {
             ),
             widget.bUttonSection,
             widget.nOticescreen,
+
+            Column(
+              children: [
+
+                 Row(children: [
+                   SizedBox(width: 20,),
+                   Container(height: 20,width: 20,color: Colors.green,),
+                   SizedBox(width: 5,),
+                   Text("Location Available",style: TextStyle(
+                     color: Colors.green, fontSize: 20,
+                   ),)
+
+                 ],),
+                SizedBox(height: 20,)
+                ,
+                Row(children: [
+                  SizedBox(width: 20,),
+                  Container(height: 20,width: 20,color: Colors.red,),
+                  SizedBox(width: 5,),
+                  Text("Location Not Shared",style: TextStyle(
+                    color: Colors.red, fontSize: 20,
+                  ),)
+
+                ],),
+              ],
+            ),
             widget.uPdownbuilder,
           ],
         ),

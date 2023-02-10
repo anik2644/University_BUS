@@ -20,13 +20,20 @@ class LocationSharePopup{
   Widget NoticeAndPasswordField()
   {
     return Container(
-        height: 200,
+        height: 250,
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+          Center(
+            child: ListTile(
+              title: Text("Location is not shared. if you want to share location fillup the below box.",style: TextStyle(
+                color: Colors.red, fontSize: 17,
+              ),),
+            ),
+          ),
               TextField(
                 decoration: InputDecoration(
                   hintText: "Type Any Notice",
@@ -40,7 +47,7 @@ class LocationSharePopup{
                   hintText: "PassCode",
                 ),
               ),
-              LocationShareButton(this._noticeController,this.index,this._passCodeController),
+              Center(child: LocationShareButton(this._noticeController,this.index,this._passCodeController)),
             ],
           ),
         ));

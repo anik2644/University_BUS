@@ -132,18 +132,33 @@ class _LocationShareButtonState extends State<LocationShareButton> {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return ElevatedButton(
+
         onPressed: () async {
 
-          ModelStatic.location_share_schedule_index = widget.index;
-          await FirebaseReadArray.loadLocShreFlag();
-          setState(() {
-            LocationtoBeSharedOrNot();
-          });
+            ModelStatic.location_share_schedule_index = widget.index;
+            await FirebaseReadArray.loadLocShreFlag();
+            setState(() {
+              LocationtoBeSharedOrNot();
+            });
 
 
-        },
-        child: Text("ShareLocation"));
+          },
+          child:  Text("Share"),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+      ),
+          /*
+          Row(
+            children: [
+              Text("Share"),
+              SizedBox(width: 5),
+              Icon( Icons.location_on),
+            ],
+          )
+
+           */
+    );
   }
 
   void _finalAction()

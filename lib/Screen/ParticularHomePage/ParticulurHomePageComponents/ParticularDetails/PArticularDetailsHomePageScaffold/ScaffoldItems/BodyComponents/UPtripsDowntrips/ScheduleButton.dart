@@ -139,7 +139,7 @@ class _ScheduleButtonState extends State<ScheduleButton> {
       side: widget.ud == "down"
           ? BorderSide(width: 5.0, color: Colors.black26)
           : BusStaticVariables.locShare[widget.index] == "1"
-              ? BorderSide(width: 5.0, color: Colors.blue)
+              ? BorderSide(width: 5.0, color: Colors.red)
               : BusStaticVariables.locShare[widget.index] == "0"
                   ? BorderSide(width: 5.0, color: Colors.green)
                   : BorderSide(width: 5.0, color: Colors.black26),
