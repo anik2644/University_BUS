@@ -35,6 +35,7 @@ class _TarangaFloatingButtonState extends State<TarangaFloatingButton> {
 
         Location.instance.enableBackgroundMode(enable: false);
         ModelStatic.locationSubscription.cancel();
+        print("stop service fone");
 
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ParticulurHomePage() ));
       },

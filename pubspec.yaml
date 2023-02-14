@@ -21,6 +21,7 @@ dependencies:
   flutter_offline: ^2.1.0
   internet_connection_checker: ^0.0.1+4
   permission_handler: ^10.2.0
+  app_settings: ^4.2.0
 
 
   firebase_core: ^2.1.0

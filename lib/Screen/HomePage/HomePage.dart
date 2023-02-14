@@ -7,7 +7,7 @@ import 'HomePageComponent/HomePageBody.dart';
 import 'HomePageComponent/HomePageDrawer.dart';
 import 'HomePageComponent/ResetFirebaseData.dart';
 import 'HomePageComponent/HomrpageAppBar.dart';
-
+import 'package:app_settings/app_settings.dart';
 class Homepage extends StatefulWidget {
 
   HomepageAppBar aPpbar = HomepageAppBar();
@@ -33,6 +33,10 @@ class _HomepageState extends State<Homepage> {
       drawer: Mydrawer(),
       appBar: PreferredSize(preferredSize: Size.fromHeight(80), child: widget.aPpbar,),
       body: widget.bOdy,
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        AppSettings.openLocationSettings();
+
+      },),
     );
   }
 }

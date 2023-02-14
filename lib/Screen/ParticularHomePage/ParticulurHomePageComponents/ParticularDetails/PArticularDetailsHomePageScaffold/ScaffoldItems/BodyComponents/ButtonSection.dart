@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../../Model/ModelClasses/Bus.dart';
+import 'BusAdmin/BusAdmin.dart';
 
 class ButtonSection extends StatefulWidget {
 
@@ -25,6 +26,8 @@ class _ButtonSectionState extends State<ButtonSection> {
               Icons.person,
             ),
             onPressed: () async {
+
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> BusAdmin()));
               //     FlutterPhoneDirectCaller.callNumber(hotel_number);
             },
           ),

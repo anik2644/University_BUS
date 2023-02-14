@@ -56,7 +56,7 @@ class _TarangaBusBodyState extends State<TarangaBusBody> {
                 ,
                 Row(children: [
                   SizedBox(width: 20,),
-                  Container(height: 20,width: 20,color: Colors.red,),
+                   Container(height: 20,width: 20,color: Colors.red,),
                   SizedBox(width: 5,),
                   Text("Location Not Shared",style: TextStyle(
                     color: Colors.red, fontSize: 20,

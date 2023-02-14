@@ -76,28 +76,19 @@ class _LocationShareButtonState extends State<LocationShareButton> {
       _updateNotice();
       _updateLocshareFlag();
 
-      print("Locstion to be shared1");
       FirebaseUpdate.updateLocshareAndNotice();
-
-      print("Locstion to be shared2");
       if (ModelStatic.gps_share_flag == 0) {
-
-        print("Locstion to be shared3");
         ModelStatic.gps_share_flag = 1;
-        print("Locstion to be shared4");
-
         loc.Location location = new loc.Location();
-        print("Locstion to be shared5");
         location.enableBackgroundMode(enable: true);
-        print("Locstion to be shared6");
         await location.changeSettings(accuracy: loc.LocationAccuracy.high, distanceFilter: 1);
         //
          print("Locstion to be shared7");
         ModelStatic.locationSubscription = location.onLocationChanged.listen(
                 (loc.LocationData currentLocation) async {
                   print("Locstion to be shared8");
-              timeRestartFlag = _timeTrack();
-              _timeFlagAction(timeRestartFlag);
+            //  timeRestartFlag = _timeTrack();
+            //  _timeFlagAction(timeRestartFlag);
 
               FirebaseLocationWrite.locationWrite( currentLocation.latitude!, currentLocation.longitude!);
               _updateAppBar(currentLocation.latitude!.toString(), currentLocation.longitude!.toString());
