@@ -6,9 +6,15 @@ import 'ChatMessage.dart';
 import 'chat_input_field.dart';
 import 'message.dart';
 
-class Body extends StatelessWidget {
+class FeedbackBody extends StatelessWidget {
 
-  static List<ChatMessage> ddemeChatMessages = [];
+  static List<ChatMessage> FeedbackMessages = [
+    ChatMessage("Submit your feedback", ChatMessageType.text,MessageStatus.viewed,false,),
+    //ChatMessage("How to get information", ChatMessageType.text,MessageStatus.viewed,true,),
+    //ChatMessage("What are you doing", ChatMessageType.text,MessageStatus.viewed,true,),
+    //ChatMessage("How may i help you ", ChatMessageType.text,MessageStatus.viewed,false,),
+
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +24,8 @@ class Body extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: ListView.builder(
-              itemCount: Body.ddemeChatMessages.length,
-              itemBuilder: (context, index) => MessageForAdmin(Body.ddemeChatMessages[index]),
+              itemCount: FeedbackBody.FeedbackMessages.length,
+              itemBuilder: (context, index) => MessageForAdmin(FeedbackBody.FeedbackMessages[index]),
             ),
           ),
         ),

@@ -3,7 +3,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../../../Model/StaticPart/FirabaseStaticVariables.dart';
+import '../../../../../../../Model/LoadIndicator.dart';
 import 'Constant.dart';
+import 'components/ChatMessage.dart';
 import 'components/body.dart';
 
 
@@ -15,20 +18,58 @@ class MessagesScreen extends StatefulWidget {
 }
 
 class _MessagesScreenState extends State<MessagesScreen> {
-  //var chatdocid;
 
-  @override
-  void initState() {
-    super.initState();
+  Future<void> FetchMEssage() async {
 
-    //checkUser();
-    //  AuthService.ddemeChatMessages.clear();
-    //
-    // if(AuthService.ddemeChatMessages.length==0)
-    //   AuthService.FetchMEssage();
+    var chatdocid;
+   // FeedbackBody.FeedbackMessages.clear();
+    print("this is fetch ");
+    await FirebaseFirestore.instance.collection("adminchats").where('users', isEqualTo: {
+     // friendUid: null, currentUserId: null
+    "AuthService.email": null,
+      "admin": null,
+    })
+        .get().then((value) => {
+       chatdocid= value.docs.single.id,
+      value.docs.forEach((result) {
+        print(result.data());
+        FirebaseFirestore.instance.collection("adminchats")
+            .doc(chatdocid)
+            .collection("messages").orderBy('createdOn',  descending: false)
+            .get()
+            .then((subcol) =>
+        {
+
+
+          subcol.docs.forEach((element) {
+            var data;
+            data= element.data();
+
+
+            FeedbackBody.FeedbackMessages.add(ChatMessage( data["msg"].toString() ,ChatMessageType.text,MessageStatus.viewed,false));
+
+            //ChatMessage();
+            // print(msge.text);
+            // print(msge.isSender);
+            // ddemeChatMessages.add(msge);
+            print("hellon world");
+           // print(ddemeChatMessages.length);
+            // print(result.id);
+          })
+        });
+      }),
+ 
+    setState(() {
+    print(FeedbackBody.FeedbackMessages.length);
+    FirebaseStaticVAriables.isLoading = true;
+    })
+    });
+
+
+
+
 
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +77,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
       appBar: buildAppBar(),
       body: RefreshIndicator(
         // key: refreshKey,
-        child: Body(),
+        child: FeedbackBody(),
         onRefresh: () async {
           await refreshList();
         },
@@ -46,9 +87,29 @@ class _MessagesScreenState extends State<MessagesScreen> {
   }
   Future<Null> refreshList()
   async {
-    Navigator.pushReplacement(context, MaterialPageRoute(
-        builder: (BuildContext context) => MessagesScreen()));
-  }
+
+      FirebaseStaticVAriables.isLoading= false ;
+
+      if(!FirebaseStaticVAriables.isLoading)
+      {
+        LoadingIndicator oPenDialouge = new LoadingIndicator(context);
+        oPenDialouge.openDialouge();
+      }
+      await FetchMEssage();
+
+      setState(() {
+        if(FirebaseStaticVAriables.isLoading)
+        {
+          FirebaseStaticVAriables.isLoading=!FirebaseStaticVAriables.isLoading;
+          Navigator.pushReplacement(context, MaterialPageRoute(
+              builder: (BuildContext context) => MessagesScreen()));
+        }
+      });
+
+
+    }
+
+
 
 
   AppBar buildAppBar() {

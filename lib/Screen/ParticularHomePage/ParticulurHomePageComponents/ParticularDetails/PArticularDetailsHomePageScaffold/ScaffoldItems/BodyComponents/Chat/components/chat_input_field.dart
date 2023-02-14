@@ -8,12 +8,6 @@ import 'body.dart';
 
 
 class ChatInputField extends StatelessWidget {
-  const ChatInputField({
-    Key? key,
-   // required this.indx;
-  }) : super(key: key);
-
-  //final int indx;
 
   @override
   Widget build(BuildContext context) {
@@ -94,8 +88,9 @@ class ChatInputField extends StatelessWidget {
                          // AuthService.FetchMEssage();
 
 
-                          final friendUid = "admin";
-                          final currentUserId = "AuthService.email";
+                           final friendUid = "admin";
+                           final currentUserId = "AuthService.email";
+
                           var chatDocId;
                           CollectionReference chats = FirebaseFirestore.instance.collection('adminchats');
                           if (message_type_box_controller.text== '') return;
@@ -138,7 +133,7 @@ class ChatInputField extends StatelessWidget {
                             //_textController.text = '';
                           });
 
-                          Body.ddemeChatMessages.add(ChatMessage(
+                          FeedbackBody.FeedbackMessages.add(ChatMessage(
                               message_type_box_controller.text.toString(),
                               ChatMessageType.text,
                               MessageStatus.viewed,
