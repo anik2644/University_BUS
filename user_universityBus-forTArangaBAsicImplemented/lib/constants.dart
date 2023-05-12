@@ -23,6 +23,7 @@ class AllStaticVariables{
   static String selectedtrip='0';
   static int gps_share_flag =0;
   static int online_offline_flag=0;
+  static int anikf=0;
 
 
   static late String chatDocId;
