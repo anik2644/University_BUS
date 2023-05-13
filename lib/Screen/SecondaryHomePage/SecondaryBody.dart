@@ -1,8 +1,7 @@
+import 'package:campousia/Screen/ParticularHomePage/ParticulurHomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:userapp/BusDetails/BusDetailsHomePage.dart';
 
-import '../Taranga/TarangaHomePage.dart';
 
 class SecondaryBody extends StatefulWidget {
   const SecondaryBody({Key? key}) : super(key: key);
@@ -20,7 +19,7 @@ class _SecondaryBodyState extends State<SecondaryBody> {
         Bus.selectedBus = index;
         print(Bus.selectedBus);
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => TarangaHomePage()));
+            MaterialPageRoute(builder: (context) => ParticulurHomePage()));
       },
       child: Row(
         children: [

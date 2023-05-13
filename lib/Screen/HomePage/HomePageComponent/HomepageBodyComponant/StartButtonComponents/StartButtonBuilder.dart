@@ -1,4 +1,5 @@
 import 'package:campousia/Screen/HomePage/HomePageComponent/HomepageBodyComponant/StartButtonComponents/StartButtonBody.dart';
+import 'package:campousia/Screen/SecondaryHomePage/SecondaryHomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,7 @@ class _StartButtonBuilderState extends State<StartButtonBuilder> {
         {
           FirebaseStaticVAriables.isLoading=!FirebaseStaticVAriables.isLoading;
           Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => ParticulurHomePage()));
+              MaterialPageRoute(builder: (context) => SecondaryHomepage()));
          }
       });
 
