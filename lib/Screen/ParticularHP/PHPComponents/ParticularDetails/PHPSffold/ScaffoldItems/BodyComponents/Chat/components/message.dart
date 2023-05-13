@@ -1,5 +1,6 @@
 
-import 'package:campousia/Screen/ParticularHomePage/ParticulurHomePageComponents/ParticularDetails/PArticularDetailsHomePageScaffold/ScaffoldItems/BodyComponents/Chat/components/text_messageforAdmin.dart';
+
+import 'package:campousia/Screen/ParticularHP/PHPComponents/ParticularDetails/PHPSffold/ScaffoldItems/BodyComponents/Chat/components/txtMsgforAd.dart';
 import 'package:flutter/material.dart';
 import '../Constant.dart';
 import 'ChatMessage.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Model/StaticPart/ModelStatic.dart';
-import 'ParticularDetails/PArticularDetailsHomePageScaffold/ParticularHomepageScaffold.dart';
+import 'ParticularDetails/PHPSffold/PHPScflld.dart';
 
 class ParticulurHomepageRefresh extends StatefulWidget {
 

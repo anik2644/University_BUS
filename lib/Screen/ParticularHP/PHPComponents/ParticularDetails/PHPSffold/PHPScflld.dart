@@ -6,7 +6,7 @@ import '../../../../../Model/StaticPart/ModelStatic.dart';
 import '../../../../Model/InternetConnectionCHecker.dart';
 import 'ScaffoldItems/TarangaAppBar.dart';
 import 'ScaffoldItems/TarangaBusBody.dart';
-import 'ScaffoldItems/TarangaFloatingButton.dart';
+import 'ScaffoldItems/TrngFltBtn.dart';
 
 
 

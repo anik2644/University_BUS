@@ -1,10 +1,10 @@
-import 'package:campousia/Screen/ParticularHomePage/ParticulurHomePageComponents/ParticularDetails/PArticularDetailsHomePageScaffold/ScaffoldItems/BodyComponents/Chat/MessageScreen.dart';
-import 'package:campousia/Screen/ParticularHomePage/ParticulurHomePageComponents/ParticularDetails/PArticularDetailsHomePageScaffold/ScaffoldItems/BodyComponents/Route/RouteView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../../Model/ModelClasses/Bus.dart';
 import 'BusAdmin/BusAdmin.dart';
+import 'Chat/MessageScreen.dart';
+import 'Route/RouteView.dart';
 
 class ButtonSection extends StatefulWidget {
 

@@ -1,6 +1,8 @@
-import 'package:campousia/Screen/ParticularHomePage/ParticulurHomePage.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../ParticularHP/ParticulurHomePage.dart';
 
 
 class SecondaryBody extends StatefulWidget {
