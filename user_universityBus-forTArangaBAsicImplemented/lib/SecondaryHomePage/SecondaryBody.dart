@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:userapp/BusDetails/BusDetailsHomePage.dart';
 
+import '../Taranga/TarangaHomePage.dart';
+
 class SecondaryBody extends StatefulWidget {
   const SecondaryBody({Key? key}) : super(key: key);
 
@@ -14,14 +16,15 @@ class SecondaryBody extends StatefulWidget {
 
 class _SecondaryBodyState extends State<SecondaryBody> {
 
-  GestureDetector MyArticles(String imageVal, String hotelname, String hotellocation,int index) {
+  GestureDetector MyArticles(String imageVal, String hotelname, String hotellocation,int index)
+  {
     return GestureDetector(
 
       onTap: () {
         //  History_model.His.add(index);
         Bus.selectedBus = index;
         print(Bus.selectedBus);
-          Navigator.push(context, MaterialPageRoute(builder: (context) => BusDetailsHomePage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => TarangaHomePage()));
 
       },
       child: Container(
@@ -116,6 +119,12 @@ class _SecondaryBodyState extends State<SecondaryBody> {
         SliverList(
           delegate: SliverChildListDelegate(
             [
+
+              TextToDisplay("Favourites:"),
+              TripsTimes("up"),
+              TextToDisplay("All Buses"),
+              TripsTimes("up"),
+              /*
               Container(
                 margin: EdgeInsets.symmetric(vertical: 20.0),
                 height: 1000,//Hotel.hotelList.length* (MediaQuery.of(context).size.width / 2),
@@ -130,13 +139,41 @@ class _SecondaryBodyState extends State<SecondaryBody> {
                 ),
 
               ),
-
+               */
             ],
 
           ),
        ),
       ],
     );
+  }
+
+  Widget TripsTimes(String ud)
+  {
+    return Container(
+        height: 100,
+        child: ListView.builder(
+          //shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
+          padding: EdgeInsets.only(right: 25, left: 25, top: 10),
+          itemCount: display_list.length,
+          itemBuilder: (context, index) => MyArticles(
+              display_list[index].x,
+              display_list[index].name,
+              display_list[index].address,index
+          ),
+        ));
+  }
+
+  Widget TextToDisplay(String title)
+  {
+    return  ListTile(
+      title: Text(
+        title,
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+      ),
+    );
+
   }
 }
 

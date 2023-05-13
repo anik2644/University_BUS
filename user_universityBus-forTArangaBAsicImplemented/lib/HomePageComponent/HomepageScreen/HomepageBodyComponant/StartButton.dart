@@ -1,4 +1,6 @@
 import 'package:userapp/Model/LoadIndicator.dart';
+import 'package:userapp/SecondaryHomePage/SecondaryBody.dart';
+import 'package:userapp/SecondaryHomePage/SecondaryHomePage.dart';
 import 'package:userapp/StaticPart/FirabaseStaticVariables.dart';
 import 'package:userapp/StaticPart/ModelStatic.dart';
 import 'package:userapp/Taranga/TarangaHomePage.dart';
@@ -31,7 +33,7 @@ class _StartBUttonState extends State<StartBUtton> {
           {
            // FirebaseStaticVAriables.isLoading=!FirebaseStaticVAriables.isLoading;
             Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => TarangaHomePage()));
+                MaterialPageRoute(builder: (context) => SecondaryHomepage()));
           }
         });
 
