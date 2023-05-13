@@ -7,27 +7,56 @@ import '../Taranga/TarangaHomePage.dart';
 class SecondaryBody extends StatefulWidget {
   const SecondaryBody({Key? key}) : super(key: key);
 
-
-
-
   @override
   State<SecondaryBody> createState() => _SecondaryBodyState();
 }
 
 class _SecondaryBodyState extends State<SecondaryBody> {
-
-  GestureDetector MyArticles(String imageVal, String hotelname, String hotellocation,int index)
-  {
+  GestureDetector BusButton(
+      String imageVal, String hotelname, String hotellocation, int index) {
     return GestureDetector(
-
       onTap: () {
         //  History_model.His.add(index);
         Bus.selectedBus = index;
         print(Bus.selectedBus);
-          Navigator.push(context, MaterialPageRoute(builder: (context) => TarangaHomePage()));
-
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => TarangaHomePage()));
       },
-      child: Container(
+      child: Row(
+        children: [
+          SizedBox(width: 22,),
+          Container(
+            width: 250,
+            child: Card(
+              child: Wrap(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.width / 2,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(11.0),
+                      image: DecorationImage(
+                        image: NetworkImage(imageVal),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  ListTile(
+                    title: Text(hotelname),
+                    subtitle: Text(hotellocation),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(width: 22,),
+        ],
+      ),
+    );
+
+    /*
+      Container(
       width: 160.0,
       child: Card(
         child: Wrap(
@@ -62,6 +91,8 @@ class _SecondaryBodyState extends State<SecondaryBody> {
       ),
 
     ),);
+
+           */
   }
 
   List<Bus> display_list = List.from(Bus.busList);
@@ -69,7 +100,7 @@ class _SecondaryBodyState extends State<SecondaryBody> {
     setState(() {
       display_list = Bus.busList
           .where((element) =>
-          element.name!.toLowerCase().contains(value.toLowerCase()))
+              element.name!.toLowerCase().contains(value.toLowerCase()))
           .toList();
     });
   }
@@ -77,7 +108,7 @@ class _SecondaryBodyState extends State<SecondaryBody> {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      slivers: <Widget> [
+      slivers: <Widget>[
         SliverAppBar(
           automaticallyImplyLeading: true,
           backgroundColor: Colors.black,
@@ -101,10 +132,9 @@ class _SecondaryBodyState extends State<SecondaryBody> {
               width: double.infinity,
               height: 40,
               color: Colors.white,
-              child:  Center(
+              child: Center(
                 child: TextField(
-                  onChanged: (value)=> updateList(value),
-
+                  onChanged: (value) => updateList(value),
                   decoration: InputDecoration(
                     hintText: 'Search for something',
                     prefixIcon: Icon(Icons.search),
@@ -115,11 +145,9 @@ class _SecondaryBodyState extends State<SecondaryBody> {
             ),
           ),
         ),
-
         SliverList(
           delegate: SliverChildListDelegate(
             [
-
               TextToDisplay("Favourites:"),
               TripsTimes("up"),
               TextToDisplay("All Buses"),
@@ -141,47 +169,39 @@ class _SecondaryBodyState extends State<SecondaryBody> {
               ),
                */
             ],
-
           ),
-       ),
+        ),
       ],
     );
   }
 
-  Widget TripsTimes(String ud)
-  {
+  Widget TripsTimes(String ud) {
     return Container(
-        height: 100,
+        height: 300,
+        margin: EdgeInsets.symmetric(horizontal: 20.0),
         child: ListView.builder(
           //shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           padding: EdgeInsets.only(right: 25, left: 25, top: 10),
           itemCount: display_list.length,
-          itemBuilder: (context, index) => MyArticles(
-              display_list[index].x,
-              display_list[index].name,
-              display_list[index].address,index
-          ),
+          itemBuilder: (context, index) => BusButton(display_list[index].x,
+              display_list[index].name, display_list[index].address, index),
         ));
   }
 
-  Widget TextToDisplay(String title)
-  {
-    return  ListTile(
+  Widget TextToDisplay(String title) {
+    return ListTile(
       title: Text(
         title,
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
       ),
     );
-
   }
 }
 
-class Bus{
-
+class Bus {
   static int selectedBus = 3;
   static List<Bus> busList = [
-
     Bus(
       "From: __, To: __",
       "From: __, To: __",
@@ -335,12 +355,6 @@ class Bus{
     ),
     */
 
-
-
-
-
-
-
     /*
     Hotel(
       "Coxs Bazaar, Bangladesh",
@@ -402,26 +416,24 @@ class Bus{
   bool wifi;
 */
   late String x;
-  String location ="Cox's Bazar";
-  late String y ;
+  String location = "Cox's Bazar";
+  late String y;
   late String z;
-  bool isFav=false;
-  String cellNo= "01521756345";
+  bool isFav = false;
+  String cellNo = "01521756345";
   late String address;
   //List <String> image;
 
-
   //
-  Bus(String location,String address,String name,String description,String x,String y,String z)
-  {
-
-    this.location=location;
-    this.address=address;
-    this.name= name;
-    this.description= description;
-    this.x =x;
-    this.y=y;
-    this.z=z;
+  Bus(String location, String address, String name, String description,
+      String x, String y, String z) {
+    this.location = location;
+    this.address = address;
+    this.name = name;
+    this.description = description;
+    this.x = x;
+    this.y = y;
+    this.z = z;
 
     //  print("done");
     //  var image;
@@ -430,10 +442,7 @@ class Bus{
     image.add(y);
     image.add(z);
     */
-
   }
 
 // get image => null;
-
-
 }
