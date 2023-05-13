@@ -7,6 +7,8 @@ import 'package:userapp/Taranga/TarangaHomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../Chat/MessageScreen.dart';
+
 class StartBUtton extends StatefulWidget {
 
   @override
@@ -33,7 +35,8 @@ class _StartBUttonState extends State<StartBUtton> {
           {
            // FirebaseStaticVAriables.isLoading=!FirebaseStaticVAriables.isLoading;
             Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => SecondaryHomepage()));
+                MaterialPageRoute(builder: (context) => MessagesScreen() ));
+                    //SecondaryHomepage()));
           }
         });
 
