@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'HomepageDrawerElement/LoginPopup.dart';
+
 class Mydrawer extends StatefulWidget {
+
+  int index =5;
 
   @override
   State<Mydrawer> createState() => _MydrawerState();
@@ -44,6 +48,9 @@ class _MydrawerState extends State<Mydrawer> {
 
                               child:Container(child: Text('Login')),
                               onPressed: (){
+
+                                LoginPopup popup = LoginPopup(context, widget.index);
+                                popup.openDialouge(widget.index);
 
                                 setState(() {
                                   //      Navigator.push(context, MaterialPageRoute(builder: (context) =>  AuthService().handleAuthState()),//AccountPage()),);

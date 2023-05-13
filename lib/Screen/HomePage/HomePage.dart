@@ -33,10 +33,13 @@ class _HomepageState extends State<Homepage> {
       drawer: Mydrawer(),
       appBar: PreferredSize(preferredSize: Size.fromHeight(80), child: widget.aPpbar,),
       body: widget.bOdy,
+      /*
       floatingActionButton: FloatingActionButton(onPressed: (){
         AppSettings.openAppSettings();
 
       },),
+
+       */
     );
   }
 }
