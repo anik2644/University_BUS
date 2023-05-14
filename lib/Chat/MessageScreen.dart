@@ -3,7 +3,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../../Model/LoadIndicator.dart';
+
+import '../Others/Model/LoadIndicator.dart';
 import '../StaticPart/FirabaseStaticVariables.dart';
 import 'Constant.dart';
 import 'components/ChatMessage.dart';

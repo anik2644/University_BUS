@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:userapp/SecondaryHomePage/SecondaryBody.dart';
-import 'package:userapp/Test/test.dart';
-import 'HomePageComponent/HomePage.dart';
+
+import 'Others/HomePageComponent/HomePage.dart';
+import 'Others/SecondaryHomePage/SecondaryBody.dart';
 
 Future<void> main() async {
 
