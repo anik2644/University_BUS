@@ -212,17 +212,12 @@ class Bus{
     ),
 */
   ];
+
+  static List<int> favIndices = [2,3,4];
   late String name;
   late String description;
 
-  /*
-  bool airport;
-  bool bar;
-  bool benchpoint;
-  bool parking;
-  bool restaurant;
-  bool wifi;
-*/
+
   late String x;
   String location ="Cox's Bazar";
   late String y ;
@@ -245,17 +240,8 @@ class Bus{
     this.y=y;
     this.z=z;
 
-    //  print("done");
-    //  var image;
-    /*
-    image.add(x);
-    image.add(y);
-    image.add(z);
-    */
 
   }
-
-// get image => null;
 
 
 }

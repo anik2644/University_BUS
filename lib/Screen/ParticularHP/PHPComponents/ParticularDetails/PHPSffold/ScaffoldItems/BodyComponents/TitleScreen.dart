@@ -12,6 +12,18 @@ class TitleScreen extends StatefulWidget {
 }
 
 class _TitleScreenState extends State<TitleScreen> {
+
+  bool favOrNot()
+  {
+    if (Bus.favIndices.contains(Bus.selectedBus)) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,10 +64,24 @@ class _TitleScreenState extends State<TitleScreen> {
             ),
           ),
              FavoriteButton(
-            isFavorite: false,
+            isFavorite: favOrNot(),
             // iconDisabledColor: Colors.white,
             valueChanged: (_isFavorite) {
-              print('Is Favorite : $_isFavorite');
+
+
+              if(_isFavorite) {
+                if (!Bus.favIndices.contains(Bus.selectedBus))
+                {
+                  Bus.favIndices.add(Bus.selectedBus);
+                }
+              }
+              else
+                {
+                  if (Bus.favIndices.contains(Bus.selectedBus))
+                  {
+                    Bus.favIndices.remove(Bus.selectedBus);
+                  }
+                }
             },
           ),
 
