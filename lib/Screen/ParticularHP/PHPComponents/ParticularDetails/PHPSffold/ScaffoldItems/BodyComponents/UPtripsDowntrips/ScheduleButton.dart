@@ -138,9 +138,9 @@ class _ScheduleButtonState extends State<ScheduleButton> {
     return OutlinedButton.styleFrom(
       side: widget.ud == "down"
           ? BorderSide(width: 5.0, color: Colors.black26)
-          : BusStaticVariables.locShare[widget.index] == "1"
+          : BusStaticVariables.tebbbb[widget.index] == "1"
               ? BorderSide(width: 5.0, color: Colors.red)
-              : BusStaticVariables.locShare[widget.index] == "0"
+              : BusStaticVariables.tebbbb[widget.index] == "0"
                   ? BorderSide(width: 5.0, color: Colors.green)
                   : BorderSide(width: 5.0, color: Colors.black26),
     );
@@ -156,11 +156,11 @@ class _ScheduleButtonState extends State<ScheduleButton> {
             style: Style(),
             onPressed: widget.ud == "down"
                 ? null
-                : BusStaticVariables.locShare[widget.index] == "0"
+                : BusStaticVariables.tebbbb[widget.index] == "0"
                     ? () {
                         _locationVIew();
                       }
-                    : BusStaticVariables.locShare[widget.index] == "1"
+                    : BusStaticVariables.tebbbb[widget.index] == "1"
                         ? () {
                             _shareLocation();
                           }

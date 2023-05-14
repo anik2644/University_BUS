@@ -33,7 +33,7 @@ class FirebaseReadArray{
     for(int i=0;i<BusTrips.busTrips.length;i++)
     {
       print(BusTrips.busTrips[i].name);
-      print(BusTrips.busTrips[i].Downtrips);
+      print(BusTrips.busTrips[i].Uptrips);
       print(BusTrips.busTrips[i].Notice);
 
     }

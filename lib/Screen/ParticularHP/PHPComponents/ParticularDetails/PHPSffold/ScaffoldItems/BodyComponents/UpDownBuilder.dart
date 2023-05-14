@@ -1,3 +1,5 @@
+import 'package:campousia/Model/ModelClasses/Bus.dart';
+import 'package:campousia/Model/ModelClasses/BusTrips.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -37,10 +39,11 @@ class _UpDownBuilderState extends State<UpDownBuilder> {
       child: ListView.builder(
         //shrinkWrap: true,
           scrollDirection: Axis.horizontal,
-          itemCount: ud=="down"? BusStaticVariables.Downtrips.length: BusStaticVariables.Uptrips.length,
+          itemCount: ud=="down"? BusTrips.busTrips[Bus.selectedBus].Downtrips.length:BusTrips.busTrips[Bus.selectedBus].Uptrips.length,
+          //BusStaticVariables.Downtrips.length: BusStaticVariables.Uptrips.length,
           padding: EdgeInsets.only(right: 25, left: 25, top: 10),
           itemBuilder: (context, index) =>
-              ScheduleButton(index,ud=="down"? BusStaticVariables.Downtrips[index]: BusStaticVariables.Uptrips[index], ud)),
+              ScheduleButton(index,ud=="down"? BusTrips.busTrips[Bus.selectedBus].Downtrips[index]: BusTrips.busTrips[Bus.selectedBus].Uptrips[index], ud)),
     );
   }
 
