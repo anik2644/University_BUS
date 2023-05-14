@@ -1,3 +1,4 @@
+import 'package:campousia/Model/ModelClasses/Bus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class _TarangaAppbarState extends State<TarangaAppbar> {
       automaticallyImplyLeading: false,
       centerTitle: true,
       title: Text(
-       ModelStatic.particularAppbarText
+       Bus.busList[Bus.selectedBus].name
       ,
         style: const TextStyle(
             fontSize: 20, color: Colors.white, fontWeight: FontWeight.w600),
