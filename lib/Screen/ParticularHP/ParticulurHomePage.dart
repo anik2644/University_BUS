@@ -1,3 +1,4 @@
+import 'package:campousia/Screen/SecondaryHomePage/SecondaryHomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../HomePage/HomePage.dart';
@@ -11,7 +12,7 @@ class ParticulurHomePage extends StatefulWidget {
   void BackButtonPressed(BuildContext context) async
   {
     Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (BuildContext context) => Homepage()));
+        MaterialPageRoute(builder: (BuildContext context) => SecondaryHomepage()));
 
   }
 

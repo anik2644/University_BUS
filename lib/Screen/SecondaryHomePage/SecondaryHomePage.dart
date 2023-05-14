@@ -17,21 +17,15 @@ class _SecondaryHomepageState extends State<SecondaryHomepage> {
   Widget build(BuildContext context) {
     return  SafeArea(
       child: Scaffold(
-      /*    appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Center(child: Text("Appbar")),
-      ),*/
           body: RefreshIndicator(
-//key: refreshKey,
               child: SecondaryBody(),
               onRefresh: () async {
-//await refreshList();
               }),
 
-          drawer: SecondaryHomapageDrawer()),
+         // drawer: SecondaryHomapageDrawer()
+        ),
 
-//bottomNavigationBar: Bottom1(),
 
-    );;
+    );
   }
 }

@@ -49,4 +49,11 @@ dependency_overrides:
 
 flutter:
 
+  fonts:
+    - family: Lacquer
+      fonts:
+        - asset: assets/fonts/Rajdhani-Bold.ttf
+        - asset: assets/fonts/Rajdhani-Medium.ttf
+        - asset: assets/fonts/Rajdhani-SemiBold.ttf
+
   uses-material-design: true

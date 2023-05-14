@@ -1,6 +1,8 @@
+import 'package:campousia/Screen/HomePage/HomePageComponent/HomepageDrawerElement/AllSIdeBarItems/UserManual.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../ParticularHP/PHPComponents/ParticularDetails/PHPSffold/ScaffoldItems/BodyComponents/Chat/MessageScreen.dart';
 import 'HomepageDrawerElement/LoginPopup.dart';
 
 class Mydrawer extends StatefulWidget {
@@ -96,7 +98,7 @@ class _MydrawerState extends State<Mydrawer> {
             title:
             Text("User MAnual", style: TextStyle(color: Colors.white)),
             onTap: () {
-            //  Navigator.push(context,MaterialPageRoute(builder: (context) =>MessagesScreen(),));
+              Navigator.push(context,MaterialPageRoute(builder: (context) =>UserManual(),));
             },
           ),
           ListTile(
@@ -104,7 +106,7 @@ class _MydrawerState extends State<Mydrawer> {
             title:
             Text("Campousia", style: TextStyle(color: Colors.white)),
             onTap: () {
-              //  Navigator.push(context,MaterialPageRoute(builder: (context) =>MessagesScreen(),));
+                Navigator.push(context,MaterialPageRoute(builder: (context) =>UserManual(),));
             },
           ),
           ListTile(
@@ -112,7 +114,7 @@ class _MydrawerState extends State<Mydrawer> {
             title:
             Text("Feedback", style: TextStyle(color: Colors.white)),
             onTap: () {
-              //  Navigator.push(context,MaterialPageRoute(builder: (context) =>MessagesScreen(),));
+              Navigator.push(context,MaterialPageRoute(builder: (context) =>MessagesScreen(),));
             },
           ),
           ListTile(
@@ -120,7 +122,7 @@ class _MydrawerState extends State<Mydrawer> {
             title:
             Text("About Us", style: TextStyle(color: Colors.white)),
             onTap: () {
-              //  Navigator.push(context,MaterialPageRoute(builder: (context) =>MessagesScreen(),));
+                Navigator.push(context,MaterialPageRoute(builder: (context) =>UserManual(),));
             },
           ),
           // ListTile(

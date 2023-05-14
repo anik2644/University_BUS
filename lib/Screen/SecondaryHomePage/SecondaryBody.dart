@@ -80,7 +80,7 @@ class _SecondaryBodyState extends State<SecondaryBody> {
           backgroundColor: Colors.black,
           pinned: true,
           centerTitle: true,
-          title: const Text('App Bar Text'),
+          title: const Text('Du Buses'),
           actions: [
             /*
             IconButton(
