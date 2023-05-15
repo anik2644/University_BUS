@@ -1,3 +1,4 @@
+import 'package:campousia/Model/ModelClasses/BusTrips.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -28,6 +29,7 @@ class _NoticeScreenState extends State<NoticeScreen> {
   }
   @override
   Widget build(BuildContext context) {
+
     return GestureDetector(
       child: Container(
         width: double.infinity,
@@ -36,7 +38,7 @@ class _NoticeScreenState extends State<NoticeScreen> {
             children: <Widget>[
               ListTile(
                 title: Text(
-                  BusStaticVariables.Notice
+                  BusTrips.busTrips[Bus.indexofbustrips].Notice
                   ,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),

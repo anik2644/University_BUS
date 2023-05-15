@@ -51,7 +51,7 @@ class _AdvertisePortionState extends State<AdvertisePortion> {
     return GestureDetector(
       onTap: () async {
 
-        _launchURL("www.daraz.com");
+        _launchURL("www.rokomari.com");
 
 //        _launchInBrowser('https://www.google.com/');
 

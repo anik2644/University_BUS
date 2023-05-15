@@ -1,3 +1,4 @@
+import 'package:campousia/Model/ModelClasses/Bus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -83,7 +84,7 @@ class _RouteViewState extends State<RouteView> {
     ),
     // CircleMarker(point: point, radius: radius),
     // MarkerLayer( markers: CircleMarker(point: point, radius: radius) ,)
-    MarkerLayer( markers:Routes,)
+    MarkerLayer( markers:Bus.busList[Bus.selectedBus].Stopages,)
     //new MarkerLayerOptions(markers: ),
 
     ],

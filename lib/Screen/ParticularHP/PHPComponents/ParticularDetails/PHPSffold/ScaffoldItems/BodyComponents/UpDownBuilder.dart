@@ -39,11 +39,11 @@ class _UpDownBuilderState extends State<UpDownBuilder> {
       child: ListView.builder(
         //shrinkWrap: true,
           scrollDirection: Axis.horizontal,
-          itemCount: ud=="down"? BusTrips.busTrips[Bus.selectedBus].Downtrips.length:BusTrips.busTrips[Bus.selectedBus].Uptrips.length,
+          itemCount: ud=="down"? BusTrips.busTrips[Bus.indexofbustrips].Downtrips.length:BusTrips.busTrips[Bus.indexofbustrips].Uptrips.length,
           //BusStaticVariables.Downtrips.length: BusStaticVariables.Uptrips.length,
           padding: EdgeInsets.only(right: 25, left: 25, top: 10),
           itemBuilder: (context, index) =>
-              ScheduleButton(index,ud=="down"? BusTrips.busTrips[Bus.selectedBus].Downtrips[index]: BusTrips.busTrips[Bus.selectedBus].Uptrips[index], ud)),
+              ScheduleButton(index,ud=="down"? BusTrips.busTrips[Bus.indexofbustrips].Downtrips[index]: BusTrips.busTrips[Bus.indexofbustrips].Uptrips[index], ud)),
     );
   }
 

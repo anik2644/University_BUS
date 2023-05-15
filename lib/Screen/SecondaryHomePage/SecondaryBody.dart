@@ -21,6 +21,7 @@ class _SecondaryBodyState extends State<SecondaryBody> {
         //  History_model.His.add(index);
         Bus.selectedBus = index;
         print(Bus.selectedBus);
+        Bus.indexfind();
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ParticulurHomePage()));
       },
@@ -136,8 +137,8 @@ class _SecondaryBodyState extends State<SecondaryBody> {
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.only(right: 25, left: 25, top: 10),
               itemCount: Bus.favIndices.length,
-              itemBuilder: (context, index) => BusButton(display_list[Bus.favIndices[index]].x,
-                  display_list[Bus.favIndices[index]].name, display_list[Bus.favIndices[index]].address, Bus.favIndices[index]),
+              itemBuilder: (context, index) => BusButton(Bus.busList[Bus.favIndices[index]].x,
+                  Bus.busList[Bus.favIndices[index]].name, Bus.busList[Bus.favIndices[index]].address, Bus.favIndices[index]),
             ));
       }
     else if(ud=="all"){

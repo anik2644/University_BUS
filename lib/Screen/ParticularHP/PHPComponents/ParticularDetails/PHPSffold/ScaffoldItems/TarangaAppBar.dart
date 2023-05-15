@@ -21,7 +21,7 @@ class _TarangaAppbarState extends State<TarangaAppbar> {
       automaticallyImplyLeading: false,
       centerTitle: true,
       title: Text(
-       BusTrips.busTrips[Bus.selectedBus].name
+       Bus.busList[Bus.selectedBus].name
       ,
         style: const TextStyle(
             fontSize: 20, color: Colors.white, fontWeight: FontWeight.w600),

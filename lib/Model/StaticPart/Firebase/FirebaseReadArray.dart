@@ -94,6 +94,7 @@ class FirebaseReadArray{
     BusStaticVariables.locShare.clear();
     List <String> lc= [];
     List <String> tc= [];
+    String ntc = "No notice so far" ;
 
 
     var docSnapshot = await FirebaseFirestore.instance.collection("schedule")
@@ -123,8 +124,10 @@ class FirebaseReadArray{
         lc.add(data);
       });
 
+     // ntc =  docSnapshot.data()!['notice'];
+
       BusTrips.busTrips.add(BusTrips(BusTrips.BusNames[FirebaseReadArray.ind],
-          tc,BusStaticVariables.Downtrips, [], lc, "no notice")) ;
+          tc,BusStaticVariables.Downtrips, [], lc, ntc)) ;
 
      // BusStaticVariables.Notice = docSnapshot.data()!['notice'];
 
