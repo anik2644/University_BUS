@@ -1,4 +1,6 @@
 
+import 'package:campousia/Model/ModelClasses/Bus.dart';
+import 'package:campousia/Model/ModelClasses/BusTrips.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -215,6 +217,7 @@ class _LocationShareButtonState extends State<LocationShareButton> {
   void _finalAction()
   {
 
+    BusTrips.busTrips[Bus.indexofbustrips].locShare[LocationShareButton.sbflagindex]="0";
     //ModelStatic.gps_share_flag = 1;
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ParticulurHomePage()));
     //  Navigator.pop(context);
