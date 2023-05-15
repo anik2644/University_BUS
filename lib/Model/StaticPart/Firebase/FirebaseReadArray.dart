@@ -28,6 +28,17 @@ class FirebaseReadArray{
        // print(FirebaseStaticVAriables.selected_schedule_id );
         await FirebaseReadArray.loadNoticeAndTripswithFlag();
 
+
+        List<String> llc = <String>['2', '1', '0', '1','0', '1', '1', '0', '1', '1', '1'];
+
+        // await FirebaseFirestore.instance
+        //     .collection('schedule')
+        //     .doc(FirebaseStaticVAriables.selected_schedule_id)
+        //     .update({
+        //   "locShare": llc,
+        //  // 'notice': BusStaticVariables.Notice
+        // });
+
       }
 
     for(int i=0;i<BusTrips.busTrips.length;i++)

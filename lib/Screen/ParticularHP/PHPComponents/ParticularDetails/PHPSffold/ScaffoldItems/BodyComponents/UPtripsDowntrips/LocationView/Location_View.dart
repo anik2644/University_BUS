@@ -36,7 +36,8 @@ class _LocationViewState extends State<LocationView> {
   {
     return FlutterMap(
       options: MapOptions(
-        center: LatLng(widget.latCenter, widget.lonCenter),
+        //center: LatLng(widget.latCenter, widget.lonCenter),
+        center: LatLng( 23.72773924532407, 90.40036434535615),
         zoom: 15,
         maxZoom: 18,
         //minZoom: 10

@@ -1,3 +1,5 @@
+import 'package:campousia/Model/ModelClasses/Bus.dart';
+import 'package:campousia/Model/ModelClasses/BusTrips.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -138,9 +140,9 @@ class _ScheduleButtonState extends State<ScheduleButton> {
     return OutlinedButton.styleFrom(
       side: widget.ud == "down"
           ? BorderSide(width: 5.0, color: Colors.black26)
-          : BusStaticVariables.tebbbb[widget.index] == "1"
+          :  BusTrips.busTrips[Bus.indexofbustrips].locShare[widget.index] == "1"
               ? BorderSide(width: 5.0, color: Colors.red)
-              : BusStaticVariables.tebbbb[widget.index] == "0"
+              : BusTrips.busTrips[Bus.indexofbustrips].locShare[widget.index] == "0"
                   ? BorderSide(width: 5.0, color: Colors.green)
                   : BorderSide(width: 5.0, color: Colors.black26),
     );
@@ -156,11 +158,11 @@ class _ScheduleButtonState extends State<ScheduleButton> {
             style: Style(),
             onPressed: widget.ud == "down"
                 ? null
-                : BusStaticVariables.tebbbb[widget.index] == "0"
+                :  BusTrips.busTrips[Bus.indexofbustrips].locShare[widget.index] == "0"
                     ? () {
                         _locationVIew();
                       }
-                    : BusStaticVariables.tebbbb[widget.index] == "1"
+                    :  BusTrips.busTrips[Bus.indexofbustrips].locShare[widget.index] == "1"
                         ? () {
                             _shareLocation();
                           }
