@@ -22,10 +22,10 @@ class FirebaseReadArray{
 
     for(int i=0;i<totalBus;i++)
       {
-        print(BusTrips.BusNames[i]);
+     //   print(BusTrips.BusNames[i]);
         FirebaseReadArray.ind =i;
         FirebaseStaticVAriables.selected_schedule_id = await FirebaseFetchId.getScheduleDocID(BusTrips.BusNames[i]) as String;
-        print(FirebaseStaticVAriables.selected_schedule_id );
+       // print(FirebaseStaticVAriables.selected_schedule_id );
         await FirebaseReadArray.loadNoticeAndTripswithFlag();
 
       }
@@ -34,6 +34,7 @@ class FirebaseReadArray{
     {
       print(BusTrips.busTrips[i].name);
       print(BusTrips.busTrips[i].Uptrips);
+      print(BusTrips.busTrips[i].locShare);
       print(BusTrips.busTrips[i].Notice);
 
     }
@@ -104,7 +105,7 @@ class FirebaseReadArray{
     if (docSnapshot.exists) {
 
 
-      print("in condition");
+     // print("in condition");
 
 
       List.from(docSnapshot.get('up')).forEach((element) {
@@ -124,6 +125,14 @@ class FirebaseReadArray{
         lc.add(data);
       });
 
+      if(docSnapshot.data()!['notice']!=null)
+        {
+          ntc =  docSnapshot.data()!['notice'];
+        }
+      else
+        {
+          ntc = "null notice";
+        }
      // ntc =  docSnapshot.data()!['notice'];
 
       BusTrips.busTrips.add(BusTrips(BusTrips.BusNames[FirebaseReadArray.ind],
