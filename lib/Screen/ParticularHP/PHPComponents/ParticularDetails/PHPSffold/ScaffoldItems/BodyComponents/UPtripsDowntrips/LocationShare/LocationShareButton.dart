@@ -17,6 +17,8 @@ class LocationShareButton extends StatefulWidget {
   TextEditingController  _noticeController;
   TextEditingController _passCodeController;
   int index;
+  static String sbflag = "done";
+  static int sbflagindex = 1;
   LocationShareButton(this._noticeController,this.index,this._passCodeController);
 
   @override
@@ -56,6 +58,53 @@ class _LocationShareButtonState extends State<LocationShareButton> {
   {
     BusStaticVariables.locShare[ ModelStatic.location_share_schedule_index] = "0";
   }
+
+
+  Future <void> LocationSHareTest() async
+  {
+    print("Locstion to be shared");
+
+    // ModelStatic.start_time = new DateTime.now();
+    //
+    // //for enable location on
+    // bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    // if (!serviceEnabled) {await Geolocator.getCurrentPosition();}
+
+    // _updateNotice();
+    // _updateLocshareFlag();
+
+    // FirebaseUpdate.updateLocshareAndNotice();
+    // if (ModelStatic.gps_share_flag == 0) {
+
+
+    ModelStatic.gps_share_flag = 1;
+    loc.Location location = new loc.Location();
+    location.enableBackgroundMode(enable: true);
+    await location.changeSettings(
+        accuracy: loc.LocationAccuracy.high, distanceFilter: 1);
+    //
+    print("Locstion to be shared7");
+    ModelStatic.locationSubscription = location.onLocationChanged.listen(
+            (loc.LocationData currentLocation) async {
+          print("Locstion to be shared8");
+          //  timeRestartFlag = _timeTrack();
+          //  _timeFlagAction(timeRestartFlag);
+
+          FirebaseLocationWrite.locationWrite(
+              currentLocation.latitude!, currentLocation.longitude!);
+          _updateAppBar(currentLocation.latitude!.toString(),
+              currentLocation.longitude!.toString());
+        });
+     //}
+
+    setState(() {
+      _finalAction();
+    });
+
+
+
+  }
+
 
 
   Future<void> LocationtoBeSharedOrNot() async {
@@ -128,11 +177,21 @@ class _LocationShareButtonState extends State<LocationShareButton> {
 
         onPressed: () async {
 
-            ModelStatic.location_share_schedule_index = widget.index;
-            await FirebaseReadArray.loadLocShreFlag();
-            setState(() {
-              LocationtoBeSharedOrNot();
-            });
+          print(LocationShareButton.sbflag);
+           if(widget._passCodeController.text == LocationShareButton.sbflag)
+             {
+               print("anik");
+               LocationSHareTest();
+             }
+           else{
+             print("mahmud");
+           }
+
+            // ModelStatic.location_share_schedule_index = widget.index;
+            // await FirebaseReadArray.loadLocShreFlag();
+            // setState(() {
+            //   LocationtoBeSharedOrNot();
+            // });
 
 
           },

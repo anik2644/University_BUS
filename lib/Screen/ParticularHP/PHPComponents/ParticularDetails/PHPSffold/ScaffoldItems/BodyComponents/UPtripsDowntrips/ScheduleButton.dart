@@ -1,5 +1,6 @@
 import 'package:campousia/Model/ModelClasses/Bus.dart';
 import 'package:campousia/Model/ModelClasses/BusTrips.dart';
+import 'package:campousia/Screen/ParticularHP/PHPComponents/ParticularDetails/PHPSffold/ScaffoldItems/BodyComponents/UPtripsDowntrips/LocationShare/LocationShareButton.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -164,6 +165,8 @@ class _ScheduleButtonState extends State<ScheduleButton> {
                       }
                     :  BusTrips.busTrips[Bus.indexofbustrips].locShare[widget.index] == "1"
                         ? () {
+                             LocationShareButton.sbflag = BusTrips.busTrips[Bus.indexofbustrips].Uptrips[widget.index];
+                             LocationShareButton.sbflagindex = widget.index;
                             _shareLocation();
                           }
                         : null,

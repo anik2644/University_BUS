@@ -1,4 +1,5 @@
 
+import 'package:campousia/Model/ModelClasses/BusTrips.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,24 @@ class _SecondaryBodyState extends State<SecondaryBody> {
         Bus.selectedBus = index;
         print(Bus.selectedBus);
         Bus.indexfind();
+
+        // for(int i=0;i< BusTrips.busTrips[Bus.indexofbustrips].Uptrips.length;i++){
+        //   print(BusTrips.busTrips[Bus.indexofbustrips].Uptrips[i]);
+        //
+        // }
+        //
+        // print("object") ;
+
+        // for(int i=0;i<BusTrips.busTrips.length;i++)
+        // {
+        //   print(BusTrips.busTrips[i].name);
+        //   print(BusTrips.busTrips[i].Uptrips);
+        //   print(BusTrips.busTrips[i].locShare);
+        //   print(BusTrips.busTrips[i].Notice);
+        //
+        // }
+
+
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ParticulurHomePage()));
       },

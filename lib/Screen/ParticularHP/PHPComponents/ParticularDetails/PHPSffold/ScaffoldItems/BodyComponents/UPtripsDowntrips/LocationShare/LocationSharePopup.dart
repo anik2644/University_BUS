@@ -87,7 +87,8 @@ class LocationSharePopup{
       context: context,
       builder: (BuildContext context) => Dialog(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-          child:ModelStatic.locSharePopupFlag==1?NoticeAndPasswordField():AllReadyShared() ));
+        // child:ModelStatic.locSharePopupFlag==1?NoticeAndPasswordField():AllReadyShared() ));
+          child:NoticeAndPasswordField()));
 
 
 
