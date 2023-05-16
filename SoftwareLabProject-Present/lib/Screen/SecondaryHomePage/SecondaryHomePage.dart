@@ -1,3 +1,4 @@
+import 'package:campousia/Screen/HomePage/HomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,19 +14,35 @@ class SecondaryHomepage extends StatefulWidget {
 }
 
 class _SecondaryHomepageState extends State<SecondaryHomepage> {
+
+
+  void BackButtonPressed(BuildContext context) async
+  {
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (BuildContext context) => Homepage()));
+
+  }
+
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
-      child: Scaffold(
-          body: RefreshIndicator(
-              child: SecondaryBody(),
-              onRefresh: () async {
-              }),
+    return  WillPopScope(
+      onWillPop: () async {
+        BackButtonPressed(context);
+        return true;
+      },
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.black,
+            body: RefreshIndicator(
+                child: SecondaryBody(),
+                onRefresh: () async {
+                }),
 
-         // drawer: SecondaryHomapageDrawer()
-        ),
+           // drawer: SecondaryHomapageDrawer()
+          ),
 
 
+      ),
     );
   }
 }

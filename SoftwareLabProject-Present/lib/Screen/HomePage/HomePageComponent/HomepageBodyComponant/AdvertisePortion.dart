@@ -87,7 +87,7 @@ class _AdvertisePortionState extends State<AdvertisePortion> {
         height: 300,
         child: //Center(child: Text("Reserved"))
 
-        Image.network("https://i.ytimg.com/vi/cWLCbjyYPdc/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AHOBYAC4AOKAgwIABABGGUgZShlMA8=&rs=AOn4CLCU7fqWXdl_D6N_JmtFwuZeKmHeqw"),
+        Image.network("https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/Logo_of_Bangladesh_Chhatra_League.svg/800px-Logo_of_Bangladesh_Chhatra_League.svg.png"),
       ),
     );
   }

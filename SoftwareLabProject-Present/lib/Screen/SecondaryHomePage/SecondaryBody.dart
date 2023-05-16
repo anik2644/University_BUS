@@ -48,13 +48,14 @@ class _SecondaryBodyState extends State<SecondaryBody> {
         children: [
           SizedBox(width: 22,),
           Container(
-            width: 250,
+            width: 270,
+            height: 240,
             child: Card(
               child: Wrap(
                 children: <Widget>[
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.width / 2,
+                    height: 160,//MediaQuery.of(context).size.width / 2,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(11.0),
@@ -134,9 +135,9 @@ class _SecondaryBodyState extends State<SecondaryBody> {
         SliverList(
           delegate: SliverChildListDelegate(
             [
-              TextToDisplay("Favourites:"),
+              TextToDisplay("Favourites :"),
               BusButtonItem("fav"),
-              TextToDisplay("All Buses"),
+              TextToDisplay("All Buses :"),
               BusButtonItem("all"),
             ],
           ),
@@ -191,9 +192,11 @@ class _SecondaryBodyState extends State<SecondaryBody> {
 
   Widget TextToDisplay(String title) {
     return ListTile(
-      title: Text(
-        title,
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+      title: Center(
+        child: Text(
+          title,
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,color: Colors.white,),
+        ),
       ),
     );
   }

@@ -23,7 +23,7 @@ class _HomePageBodyState extends State<HomePageBody> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          widget.iMageGallery,
+          widget.advertisePortion,
           SizedBox(height: 20,),
           /*
           GestureDetector(
@@ -62,7 +62,8 @@ class _HomePageBodyState extends State<HomePageBody> {
           ),
 
 */
-          widget.advertisePortion,
+
+          widget.iMageGallery,
           widget.sTartbutton
 
         ],
